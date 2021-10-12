@@ -6,15 +6,15 @@ from browserstack.local import Local
 import os
 
 # Set your BrowserStack access credentials here
-userName = "YOUR_USERNAME"
-accessKey = "YOUR_ACCESS_KEY"
+userName = "arihantjain9"
+accessKey = "KRWDSPqcquMZchhgFpje"
 
 desired_caps = {
     "browserstack.user" : userName,
     "browserstack.key" : accessKey,
 
     # Set URL of the application under test
-    "app" : "<bs://app-id>",
+    "app" : "bs://f607132f828d1331e9a5dfe335e69c6ffce5b6f9",
 
     # Specify device and os_version for testing
     "device" : "iPhone 11 Pro",
@@ -25,7 +25,7 @@ desired_caps = {
 
      # Set other BrowserStack capabilities
     "project" : "First Python Local project", 
-    "build" : "browserstack-build-1",
+    "build" : os.environ.get('BROWSERSTACK_BUILD_NAME') or "browserstack-build-1",
     "name" : "local_test"
 }
 

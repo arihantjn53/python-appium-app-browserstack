@@ -2,15 +2,15 @@ from appium import webdriver
 from appium.webdriver.common.mobileby import MobileBy
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
+import time, os
 
 desired_cap = {
     # Set your access credentials
-    "browserstack.user" : "YOUR_USERNAME",
-    "browserstack.key" : "YOUR_ACCESS_KEY",
+    "browserstack.user" : "arihantjain9",
+    "browserstack.key" : "KRWDSPqcquMZchhgFpje",
 
     # Set URL of the application under test
-    "app" : "bs://<app-id>",
+    "app" : "bs://f607132f828d1331e9a5dfe335e69c6ffce5b6f9",
 
     # Specify device and os_version for testing
     "device" : "iPhone 11 Pro",
@@ -18,7 +18,7 @@ desired_cap = {
     
     # Set other BrowserStack capabilities
     "project" : "First Python project", 
-    "build" : "browserstack-build-1",
+    "build" : os.environ.get('BROWSERSTACK_BUILD_NAME') or "browserstack-build-1",
     "name" : "first_test"
 }
 

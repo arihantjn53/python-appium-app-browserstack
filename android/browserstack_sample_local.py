@@ -3,18 +3,18 @@ from appium.webdriver.common.mobileby import MobileBy
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from browserstack.local import Local
-import time
+import time, os
 
 # Set your BrowserStack access credentials here
-userName = "YOUR_USERNAME"
-accessKey = "YOUR_ACCESS_KEY"
+userName = "arihantjain9"
+accessKey = "KRWDSPqcquMZchhgFpje"
 
 desired_caps = {
     "browserstack.user" : userName,
     "browserstack.key" : accessKey,
 
     # Set URL of the application under test
-    "app" : "<bs://app-id>",
+    "app" : "bs://fdb8b4dc696a885575d5b41efbda22d23ec7ddcd",
 
     # Specify device and os_version for testing
     "device" : "Google Pixel 3",
@@ -25,7 +25,7 @@ desired_caps = {
 
     # Set other BrowserStack capabilities
     "project" : "First Python Local project", 
-    "build" : "browserstack-build-1",
+    "build" : os.environ.get('BROWSERSTACK_BUILD_NAME') or "browserstack-build-1",
     "name" : "local_test"
 }
 
